@@ -26,11 +26,14 @@ module "cdn" {
   viewer_protocol_policy = "redirect-to-https"
   website_enabled        = true
 
-  lambda_function_association = [{
-    event_type   = "origin-response"
-    include_body = false
-    lambda_arn   = var.lambda_for_csp_arn
-  }]
+  lambda_function_association = concat(
+    [],
+    var.lambda_for_csp_arn == "" ? [] : [{
+      event_type   = "origin-response"
+      include_body = false
+      lambda_arn   = var.lambda_for_csp_arn
+      }
+  ])
 
   tags = {
     service = var.service
