@@ -4,8 +4,7 @@ variable "create" {
 }
 
 variable "filename" {
-  default = null
-  type    = string
+  type = string
 }
 
 variable "handler" {
@@ -35,9 +34,4 @@ variable "source_code_hash" {
 
 variable "stage" {
   type = string
-}
-
-locals {
-  function_name = "${local.name}-${var.function_name}"
-  name          = "${var.service}-lambda"
 }

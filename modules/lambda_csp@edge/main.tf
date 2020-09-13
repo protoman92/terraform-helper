@@ -17,7 +17,7 @@ data "archive_file" "lambda_inject_security_headers_zip" {
   }
 }
 
-module "iam_lambda_profile_for_cf" {
+module "iam_profile" {
   source  = "../iam/lambda_profile"
   create  = var.create
   service = var.service
@@ -30,7 +30,7 @@ module "lambda_edge_inject_security_header" {
   filename         = data.archive_file.lambda_inject_security_headers_zip.output_path
   function_name    = "inject-security-header"
   handler          = "inject_security_headers.handler"
-  iam_role_arn     = ""
+  iam_role_arn     = module.iam_profile.role_arn
   runtime          = "nodejs12.x"
   service          = var.service
   source_code_hash = data.archive_file.lambda_inject_security_headers_zip.output_base64sha256

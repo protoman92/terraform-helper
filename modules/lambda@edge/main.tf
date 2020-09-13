@@ -1,7 +1,7 @@
 resource "aws_lambda_function" "this" {
   count            = var.create ? 1 : 0
   filename         = var.filename
-  function_name    = local.function_name
+  function_name    = "${var.service}-${var.stage}-${var.function_name}"
   handler          = var.handler
   publish          = true
   role             = var.iam_role_arn
