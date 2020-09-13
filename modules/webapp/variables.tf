@@ -19,6 +19,11 @@ variable "lambda_for_csp_arn" {
   type = string
 }
 
+variable "logging_enabled" {
+  default = false
+  type    = bool
+}
+
 variable "name" {
   type = string
 }

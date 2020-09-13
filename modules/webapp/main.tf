@@ -1,5 +1,6 @@
 module "cdn" {
-  source                                    = "git::https://github.com/cloudposse/terraform-aws-cloudfront-s3-cdn.git?ref=0.30.0"
+  source                                    = "cloudposse/cloudfront-s3-cdn/aws"
+  version                                   = "0.34.0"
   acm_certificate_arn                       = var.acm_certificate_arn
   aliases                                   = var.aliases
   cloudfront_origin_access_identity_iam_arn = var.origin_access_identity
@@ -18,7 +19,7 @@ module "cdn" {
     response_page_path    = "/index.html"
   }]
   index_document         = "index.html"
-  logging_enabled        = false
+  logging_enabled        = var.logging_enabled
   name                   = var.service
   namespace              = var.name
   parent_zone_id         = var.hosted_zone_id
