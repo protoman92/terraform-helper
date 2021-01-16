@@ -7,6 +7,11 @@ variable "create" {
   type    = bool
 }
 
+variable "font_source" {
+  default = []
+  type    = list(string)
+}
+
 variable "image_source" {
   type = list(string)
 }
@@ -17,4 +22,14 @@ variable "service" {
 
 variable "stage" {
   type = string
+}
+
+variable "style_source" {
+  default = []
+  type    = list(string)
+}
+
+variable "style_source_elem" {
+  default = []
+  type    = list(string)
 }

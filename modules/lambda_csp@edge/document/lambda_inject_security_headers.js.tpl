@@ -9,11 +9,12 @@ exports.handler = (event, context, callback) => {
       value:
         "default-src ${defaultSource}; " +
         "connect-src ${connectSource}; " +
-        "font-src 'self'; " +
+        "font-src 'self' ${fontSource}; " +
         "img-src 'self' ${imageSource}; " +
         "manifest-src 'self'; " +
         "script-src 'self'; " +
-        "style-src 'self'; " +
+        "style-src 'self' ${styleSource}; " +
+        "style-src-elem 'self' ${styleSourceElem}; " +
         "object-src 'none'"
     }
   ];
