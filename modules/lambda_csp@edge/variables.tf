@@ -12,12 +12,22 @@ variable "font_source" {
   type    = list(string)
 }
 
+variable "frame_source" {
+  default = []
+  type    = list(string)
+}
+
 variable "image_source" {
   type = list(string)
 }
 
 variable "service" {
   type = string
+}
+
+variable "script_source_elem" {
+  default = []
+  type    = list(string)
 }
 
 variable "stage" {

@@ -2,12 +2,14 @@ data "template_file" "lambda_inject_security_headers" {
   template = file("${path.module}/document/lambda_inject_security_headers.js.tpl")
 
   vars = {
-    connectSource   = join(" ", var.connect_source)
-    defaultSource   = "'none'",
-    fontSource      = join(" ", var.font_source)
-    imageSource     = join(" ", var.image_source)
-    styleSource     = join(" ", var.style_source)
-    styleSourceElem = join(" ", var.style_source_elem)
+    connectSource    = join(" ", var.connect_source)
+    defaultSource    = "'none'",
+    fontSource       = join(" ", var.font_source)
+    frameSource      = join(" ", var.frame_source)
+    imageSource      = join(" ", var.image_source)
+    scriptSourceElem = join(" ", var.script_source_elem)
+    styleSource      = join(" ", var.style_source)
+    styleSourceElem  = join(" ", var.style_source_elem)
   }
 }
 
