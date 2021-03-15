@@ -5,6 +5,7 @@ module "cdn" {
   aliases                                   = var.aliases
   cloudfront_origin_access_identity_iam_arn = var.origin_access_identity
   cloudfront_origin_access_identity_path    = var.origin_access_identity
+  compress                                  = true
   enabled                                   = var.create
   error_document                            = "index.html"
   custom_error_response = [{

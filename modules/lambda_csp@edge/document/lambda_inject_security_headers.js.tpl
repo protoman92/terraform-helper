@@ -8,7 +8,7 @@ exports.handler = (event, context, callback) => {
       key: "Content-Security-Policy",
       value:
         "default-src ${defaultSource}; " +
-        "connect-src ${connectSource}; " +
+        "connect-src 'self' ${connectSource}; " +
         "font-src 'self' ${fontSource}; " +
         "frame-src 'self' ${frameSource}; " +
         "img-src 'self' ${imageSource}; " +
