@@ -25,6 +25,11 @@ variable "service" {
   type = string
 }
 
+variable "script_source" {
+  default = []
+  type    = list(string)
+}
+
 variable "script_source_elem" {
   default = []
   type    = list(string)

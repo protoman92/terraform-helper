@@ -7,6 +7,7 @@ data "template_file" "lambda_inject_security_headers" {
     fontSource       = join(" ", var.font_source)
     frameSource      = join(" ", var.frame_source)
     imageSource      = join(" ", var.image_source)
+    scriptSource     = join(" ", var.script_source)
     scriptSourceElem = join(" ", var.script_source_elem)
     styleSource      = join(" ", var.style_source)
     styleSourceElem  = join(" ", var.style_source_elem)
