@@ -25,6 +25,7 @@ module "cdn" {
   namespace              = var.name
   parent_zone_id         = var.hosted_zone_id
   stage                  = var.stage
+  versioning_enabled     = var.versioning_enabled
   viewer_protocol_policy = "redirect-to-https"
   website_enabled        = true
 

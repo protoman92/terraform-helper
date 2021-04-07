@@ -40,6 +40,11 @@ variable "stage" {
   type = string
 }
 
+variable "versioning_enabled" {
+  default = false
+  type    = bool
+}
+
 locals {
   error_caching_min_ttl = 300
 }
