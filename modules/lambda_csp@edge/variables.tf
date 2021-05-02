@@ -48,3 +48,8 @@ variable "style_source_elem" {
   default = []
   type    = list(string)
 }
+
+variable "x_frame_options" {
+  default = "DENY"
+  type    = string
+}

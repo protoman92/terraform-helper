@@ -11,6 +11,7 @@ data "template_file" "lambda_inject_security_headers" {
     scriptSourceElem = join(" ", var.script_source_elem)
     styleSource      = join(" ", var.style_source)
     styleSourceElem  = join(" ", var.style_source_elem)
+    xFrameOptions    = var.x_frame_options
   }
 }
 
