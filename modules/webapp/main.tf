@@ -19,6 +19,7 @@ module "cdn" {
     response_code         = 200
     response_page_path    = "/index.html"
   }]
+  forward_header_values  = tolist(toset(concat(var.forward_header_values, ["Access-Control-Request-Headers", "Access-Control-Request-Method", "Origin"])))
   index_document         = "index.html"
   logging_enabled        = var.logging_enabled
   name                   = var.service

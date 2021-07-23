@@ -11,6 +11,11 @@ variable "create" {
   type    = bool
 }
 
+variable "forward_header_values" {
+  default = []
+  type    = list(string)
+}
+
 variable "hosted_zone_id" {
   type = string
 }
