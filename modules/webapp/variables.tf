@@ -21,7 +21,8 @@ variable "hosted_zone_id" {
 }
 
 variable "lambda_for_csp_arn" {
-  type = string
+  default = ""
+  type    = string
 }
 
 variable "logging_enabled" {
