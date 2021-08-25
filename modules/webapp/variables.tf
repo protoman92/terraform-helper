@@ -17,7 +17,8 @@ variable "forward_header_values" {
 }
 
 variable "hosted_zone_id" {
-  type = string
+  default = ""
+  type    = string
 }
 
 variable "lambda_for_csp_arn" {
