@@ -11,7 +11,7 @@ data "aws_region" "region" {
 }
 
 data "aws_lambda_function" "lambda" {
-  count = var.enabled ? 1 : 0
+  count         = var.enabled ? 1 : 0
   function_name = join("-", [var.service, var.environment, var.function])
 }
 

@@ -1,7 +1,7 @@
 variable "enabled" {
-  default = true
+  default     = true
   description = "Whether to fetch remote resources"
-  type = bool
+  type        = bool
 }
 
 variable "environment" {
