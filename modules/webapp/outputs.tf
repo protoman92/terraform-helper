@@ -1,7 +1,7 @@
 output "aliases" {
-  value = module.cdn.aliases
+  value = module.this.aliases
 }
 
 output "domain_name" {
-  value = module.cdn.cf_domain_name
+  value = module.this.cf_domain_name
 }

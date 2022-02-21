@@ -1,14 +1,18 @@
 variable "acm_certificate_arn" {
-  type = string
+  default     = ""
+  description = "Corresponds to the acm_certificate_arn property in the source module"
+  type        = string
 }
 
 variable "aliases" {
-  type = list(string)
+  default = []
+  type    = list(string)
 }
 
-variable "create" {
-  default = true
-  type    = bool
+variable "enabled" {
+  default     = true
+  description = "Whether to create resources"
+  type        = bool
 }
 
 variable "forward_header_values" {
@@ -32,19 +36,29 @@ variable "logging_enabled" {
 }
 
 variable "name" {
-  type = string
+  description = "Corresponds to the name property in the source module"
+  type        = string
+}
+
+variable "namespace" {
+  description = "Corresponds to the namespace property in the source module"
+  type        = string
 }
 
 variable "origin_access_identity" {
-  type = string
-}
-
-variable "service" {
-  type = string
+  default = ""
+  type    = string
 }
 
 variable "stage" {
-  type = string
+  description = "Corresponds to the stage property in the source module"
+  type        = string
+}
+
+variable "tags" {
+  default     = null
+  description = "Corresponds to the tags property in the source module"
+  type        = map(string)
 }
 
 variable "versioning_enabled" {
