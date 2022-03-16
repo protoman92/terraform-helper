@@ -6,6 +6,12 @@ variable "email" {
   type = string
 }
 
+variable "enabled" {
+  default     = true
+  description = "Whether to create resources"
+  type        = bool
+}
+
 variable "forward_email" {
   default = null
   type    = string
@@ -29,7 +35,13 @@ variable "stage" {
   type = string
 }
 
+variable "tags" {
+  default     = null
+  description = "The tags to attach to the resources"
+  type        = map(string)
+}
+
 locals {
-  forward_email = var.forward_email == null ? "admin@${var.domain}" : var.forward_email
-  relay_email   = var.relay_email == null ? "admin@${var.domain}" : var.relay_email
+  forward_email = coalesce(var.forward_email, "admin@${var.domain}")
+  relay_email   = coalesce(var.relay_email, "admin@${var.domain}")
 }
