@@ -19,7 +19,10 @@ module "this" {
   stage          = var.stage
   tags           = var.tags
 
-  forward_emails = {
-    (local.forward_email) = compact([var.email])
-  }
+  forward_emails = merge(
+    {},
+    length(compact([local.forward_email])) == 1 ? {
+      (local.forward_email) = compact([var.email])
+    } : {}
+  )
 }
