@@ -8,7 +8,7 @@ terraform {
 
 module "this" {
   source                                    = "registry.terraform.io/cloudposse/cloudfront-s3-cdn/aws"
-  version                                   = "0.82.2"
+  version                                   = "0.82.3"
   acm_certificate_arn                       = var.acm_certificate_arn
   aliases                                   = var.aliases
   allow_ssl_requests_only                   = false
