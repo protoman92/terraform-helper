@@ -12,7 +12,7 @@ data "aws_region" "this" {
 
 data "aws_lambda_function" "this" {
   count         = var.enabled ? 1 : 0
-  function_name = join("-", [var.service, var.environment, var.function_name])
+  function_name = join("-", compact([var.service, var.environment, var.function_name]))
 }
 
 data "aws_iam_role" "this" {
@@ -32,3 +32,9 @@ module "latest_version" {
   function_name = one(data.aws_lambda_function.this.*.function_name)
   latest_alias  = var.latest_version_alias
 }
+
+data "aws_api_gateway_rest_api" "this" {
+  count = var.enabled ? 1 : 0
+  name  = join("-", compact([var.environment, var.service]))
+}
+
